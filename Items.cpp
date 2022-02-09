@@ -26,9 +26,11 @@ void Items::add_item()
 	{
 		fin >> item_id;
 		fin >> item_name;
-		fin >> item_price_s;
 		fin >> item_category;
-		count++;
+		fin >> item_price_s;
+		if(item_id == count)// so that ids remain unique
+		count++;// if it condition true then it update
+		count++;// double increament would jump from the same number if item_id same to count
 	}
 	item_id =  count +1;
 	fout << item_id << " ";
@@ -37,6 +39,10 @@ void Items::add_item()
 	cin>> item_name;
 	fout << item_name<<" ";
 	//cin.get();
+	cout << "Enter the category of the item" << endl;
+	cin >> item_category;
+	fout << item_category << endl;
+
 	cout << "Enter the price of the Item of small size" << endl;
 	cin>>item_price_s;
 	fout << item_price_s << " ";
@@ -46,9 +52,7 @@ void Items::add_item()
 	cout << "Enter the price of the Item of large size" << endl;
 	cin>>item_price_l;*/
 
-	cout << "Enter the category of the item" << endl;
-	cin>>item_category;
-	fout << item_category<<endl;
+	
 
 	fout.close();
 }
@@ -62,14 +66,15 @@ void Items::delete_item(int id)
 	{
 		fin >> item_id;
 		fin >> item_name;
-		fin >> item_price_s;
 		fin >> item_category;
+		fin >> item_price_s;
+		
 		if (item_id != id)
 		{
 			nf << item_id << " ";
 			nf << item_name << " ";
-			nf << item_price_s << " ";
-			nf << item_category << endl;
+			nf << item_category << " ";
+			nf << item_price_s << endl;
 		}
 
 			
@@ -89,8 +94,9 @@ void Items::edit_item(int id)
 	{
 		fin >> item_id;
 		fin >> item_name;
-		fin >> item_price_s;
 		fin >> item_category;
+		fin >> item_price_s;
+		
 		if (item_id == id)
 		{
 			cout << "\tEnter new record for id : " << id<<endl;
@@ -100,8 +106,8 @@ void Items::edit_item(int id)
 		{
 			nf << item_id << " ";
 			nf << item_name << " ";
-			nf << item_price_s << " ";
-			nf << item_category << endl;
+			nf << item_category << " ";
+			nf << item_price_s << endl;
 		}
 
 
@@ -122,7 +128,7 @@ void Items::show_all_item()
 	ifstream fin;
 	fin.open("Items.csv");
 	cout << "__________________________________________________" << endl;
-	cout << setw(7)<<"ID. " <<setw(15) << "Name" << setw(15) << "Price" << setw(12) << "Category" << endl;
+	cout << setw(7)<<"ID. " <<setw(15) << "Name" << setw(15) <<"Category"  << setw(12) << "Price" << endl;
 	cout << "--------------------------------------------------" << endl;
 
 	while (!fin.eof())
@@ -130,11 +136,11 @@ void Items::show_all_item()
 
 		fin >> item_id;
 		fin >> item_name;
-		fin >> item_price_s;
 		fin >> item_category;
+		fin >> item_price_s;
 		//if (item_id < 20)
 		//if (strcmp(item_category ,"pizza")==0)
-			cout << setw(5) << item_id << setw(20)<< item_name << setw(10) << item_price_s << setw(12) << item_category << endl;
+			cout << setw(5) << item_id << setw(20)<< item_name << setw(10) << item_category << setw(12) << item_price_s << endl;
 		
 
 	}

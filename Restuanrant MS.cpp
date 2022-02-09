@@ -29,25 +29,25 @@ int main()
 			o.place_order();
 			break;
 		case 2:
-			cout << "Enter item id for update it data" << endl;
-			cin >> id1;
+			cout << "update order" << endl;
+			
 			//i.edit_item(id1);
 			break;
 		case 3:
-			cout << "Enter item id for update it data" << endl;
-			cin >> id2;
-			//i.delete_item(id2);
+			cout << "Order update delete" << endl;
+			
+			//o.delete_order;
 			break;
 		case 4:
-			//i.search_item();
+			//o.update_order();
 			break;
 		case 5:
-			//i.show_all_item();
+			//
 			break;
 		case 0:
 			break;
 		default:
-			cout << "Invalid Entry. Try Again";
+			cout << "\nInvalid Entry. Try Again";
 			break;
 		}
 
@@ -57,7 +57,7 @@ int main()
 
 	//admin control area
 
-	/*do
+	do
 	{
 		cout << "Enter your Choice" << endl;
 		cout << "1. Add an Item in the List" << endl;
@@ -97,6 +97,6 @@ int main()
 
 
 	} while (option != 0);
-	*/
+	
 
 }
