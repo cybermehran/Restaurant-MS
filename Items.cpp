@@ -15,10 +15,22 @@ Items::Items()
 }
 void Items::add_item()
 {
+	int count = 0;
+	ifstream fin;
 	ofstream fout;
 	fout.open("items.csv", ios::app);
-	cout << "Enter the id of the Item" << endl;
-	cin >> item_id;
+	//cout << "Enter the id of the Item" << endl;
+	//cin >> item_id;
+	fin.open("items.csv");
+	while (!fin.eof())
+	{
+		fin >> item_id;
+		fin >> item_name;
+		fin >> item_price_s;
+		fin >> item_category;
+		count++;
+	}
+	item_id =  count +1;
 	fout << item_id << " ";
 	//cin.get();
 	cout << "Enter the name of the Item. NOTE: Use under score \"_\" instead of 'space' " << endl;
@@ -110,7 +122,7 @@ void Items::show_all_item()
 	ifstream fin;
 	fin.open("Items.csv");
 	cout << "__________________________________________________" << endl;
-	cout << setw(7)<<"No. "<<setw(15) << "Name" << setw(15) << "Price" << setw(12) << "Category" << endl;
+	cout << setw(7)<<"ID. "<<setw(15) << "Name" << setw(15) << "Price" << setw(12) << "Category" << endl;
 	cout << "--------------------------------------------------" << endl;
 
 	while (!fin.eof())

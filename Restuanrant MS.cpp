@@ -5,8 +5,9 @@ using namespace std;
 
 int main()
 {
-	//Items i;
+	Items i;
 	Orders o;
+	
 	int option,id1, id2;
 	//customer control area
 	do
@@ -23,6 +24,8 @@ int main()
 		switch (option)
 		{
 		case 1:
+
+			//i.add_item();
 			o.place_order();
 			break;
 		case 2:
