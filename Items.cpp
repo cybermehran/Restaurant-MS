@@ -122,7 +122,7 @@ void Items::show_all_item()
 	ifstream fin;
 	fin.open("Items.csv");
 	cout << "__________________________________________________" << endl;
-	cout << setw(7)<<"ID. "<<setw(15) << "Name" << setw(15) << "Price" << setw(12) << "Category" << endl;
+	cout << setw(7)<<"ID. " <<setw(15) << "Name" << setw(15) << "Price" << setw(12) << "Category" << endl;
 	cout << "--------------------------------------------------" << endl;
 
 	while (!fin.eof())
