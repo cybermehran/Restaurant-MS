@@ -118,10 +118,8 @@ void Items::edit_item(int id)
 	rename("temp.csv", "Items.csv");
 
 }
-void Items::search_item()
-{
-
-}
+//void Items::search_item()
+//{}
 
 void Items::show_all_item()
 {
@@ -145,5 +143,5 @@ void Items::show_all_item()
 
 	}
 	fin.close();
-	cout << "__________________________________________________" << endl;
+	cout << "__________________________________________________" << endl<<endl;
 }

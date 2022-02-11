@@ -8,8 +8,10 @@ private: //float discount;
 	   int select_item_id;
 	   int select_item_qty;
 	   int select_category_OR_choice;
+	   int customer_id;
+	   int * temp_cust_id;
    public:
-	   int customer_id = 0;
+	   
 	   Orders();
 	   void place_order();
 	   void update_order();

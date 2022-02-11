@@ -21,7 +21,7 @@ public:
 	void delete_item(int id);
 	void edit_item(int id);
 	void show_all_item();
-	void search_item();
+	//void search_item();
 	
 	
 };

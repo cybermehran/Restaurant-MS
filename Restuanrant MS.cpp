@@ -12,6 +12,7 @@ int main()
 	cout<<"\t\t\t     M A N A G E M E N T   S Y S T E M" << endl;
 	cout << "\t\t\t##########################################\n" << endl<<endl;
 	int press;
+	
 	cout << "Select 1: Customer" << endl;
 	cout << "Select 2: Admin" << endl;
 	cin >> press;
@@ -42,6 +43,7 @@ void admin()
 	int option,id1, id2;
 	do
 	{
+		
 		cout << "Enter your Choice" << endl;
 		cout << "1. Add an Item in the List" << endl;
 		cout << "2. Update an Item in the List" << endl;
