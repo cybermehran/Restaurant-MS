@@ -1,20 +1,21 @@
 #pragma once
 #include "Items.h"
-class Orders : public Items
+#include "Customers.h"
+class Orders : public Items, public Customers 
+
 {
-private: //float discount;
-	   
+private: 
+	   //float discount;
 	   float item_total_price;
 	   int select_item_id;
 	   int select_item_qty;
 	   int select_category_OR_choice;
-	   int customer_id;
-	   int * temp_cust_id;
+	   
    public:
 	   
 	   Orders();
 	   void place_order();
 	   void update_order();
-	   void delete_order();
+	   void cancel_order(int customer_id_cancel_order);
 };
 

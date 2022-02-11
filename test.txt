@@ -23,5 +23,4 @@ oreo_shake 150 shake
 cold_coffe 130 shake
 cadbury_cup 120 ice_cream
 ice_cream_cup 100 ice_cream
- -858993460 面面面面面面
- -858993460 面面面面面面
+
