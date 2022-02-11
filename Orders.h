@@ -15,6 +15,6 @@ private: //float discount;
 	   Orders();
 	   void place_order();
 	   void update_order();
-	   void delete_order();
+	   void cancel_order(int customer_id_cancel_order);
 };
 

@@ -18,10 +18,10 @@ void Items::add_item()
 	int count = 0;
 	ifstream fin;
 	ofstream fout;
-	fout.open("items.csv", ios::app);
+	fout.open("Items.csv", ios::app);
 	//cout << "Enter the id of the Item" << endl;
 	//cin >> item_id;
-	fin.open("items.csv");
+	fin.open("Items.csv");
 	while (!fin.eof())
 	{
 		fin >> item_id;
@@ -41,20 +41,39 @@ void Items::add_item()
 	//cin.get();
 	cout << "Enter the category of the item" << endl;
 	cin >> item_category;
-	fout << item_category << endl;
+	fout << item_category << " ";
 
-	cout << "Enter the price of the Item of small size" << endl;
+	cout << "Enter the price of the Item " << endl;
 	cin>>item_price_s;
-	fout << item_price_s << " ";
+	fout << item_price_s << endl;
 
 	/*cout << "Enter the price of the Item of medium size" << endl;
 	cin>>item_price_m;
 	cout << "Enter the price of the Item of large size" << endl;
 	cin>>item_price_l;*/
-
-	
-
+	fin.close();
 	fout.close();
+
+		cout << "Item Added to List" << endl;
+		//header of available items
+		cout << "__________________________________________________" << endl;
+		cout << setw(7) << "ID. " << setw(15) << "Name" << setw(15)
+			<< "Category" << setw(12) << "Price" << endl;
+		cout << "--------------------------------------------------" << endl;
+		//first showing the list of items to customer for pizza category
+		fin.open("Items.csv");
+		while (!fin.eof())
+		{
+			fin >> item_id;
+			fin >> item_name;
+			fin >> item_category;
+			fin >> item_price_s;
+				cout << setw(5) << item_id << setw(20) << item_name << setw(10)
+					<< item_category << setw(12) << item_price_s << endl;
+		}
+		fin.close();
+		cout << "__________________________________________________\n" << endl;//bottom of available items list
+
 }
 void Items::delete_item(int id)
 {
@@ -83,6 +102,8 @@ void Items::delete_item(int id)
 	nf.close(); 
 	remove("Items.csv");
 	rename("temp.csv", "Items.csv");
+
+	cout << "### Item Id " << id << " deleted. ###" << endl;
 }
 void Items::edit_item(int id)
 {
@@ -117,6 +138,7 @@ void Items::edit_item(int id)
 	remove("Items.csv");
 	rename("temp.csv", "Items.csv");
 
+	cout << "### Record Updated ###" << endl;
 }
 //void Items::search_item()
 //{}
@@ -136,10 +158,7 @@ void Items::show_all_item()
 		fin >> item_name;
 		fin >> item_category;
 		fin >> item_price_s;
-		//if (item_id < 20)
-		//if (strcmp(item_category ,"pizza")==0)
 			cout << setw(5) << item_id << setw(20)<< item_name << setw(10) << item_category << setw(12) << item_price_s << endl;
-		
 
 	}
 	fin.close();

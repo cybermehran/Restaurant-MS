@@ -9,6 +9,7 @@ Orders::Orders()
 	//int temp_cust_id = 0;
 	//item_total_price;
 }
+/////////////////////////////////////////////////   Place a oreder //////////////////////////////////////////////////////
 void Orders::place_order()
 {
 	
@@ -359,14 +360,54 @@ void Orders::place_order()
 			//bottom line of selected items
 			cout << "__________________________________________________________________________________" << endl;
 			break;
+
 		case 0:
 			break;
 		default:
+
 			cout << "\nInvalid Entry. Try Again";
 			break;
 		}
-		
 	} while (select_category_OR_choice != 0);
-
-
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////   delete a oreder //////////////////////////////////////////////////////
+
+void Orders::cancel_order(int customer_id_cancel_order)
+{
+	ofstream write_in_newfile;
+	ifstream fin;
+	fin.open("orders List.csv");
+	write_in_newfile.open("temp co.csv");
+	while (!fin.eof())
+	{
+		fin >> item_id;
+		fin >> item_name;
+		fin >> item_category;
+		fin >> item_price_s;
+		fin >> select_item_qty;
+		fin >> item_total_price;
+		fin >> customer_id;
+		if (customer_id != customer_id_cancel_order)
+		{
+			write_in_newfile << item_id << " ";
+			write_in_newfile << item_name << " ";
+			write_in_newfile << item_category << " ";
+			write_in_newfile << item_price_s << " ";
+			write_in_newfile << select_item_qty <<" ";
+			write_in_newfile << item_total_price <<" ";
+			write_in_newfile << customer_id<<endl;
+		}
+	}
+	fin.close();
+	write_in_newfile.close();
+	remove("orders List.csv");
+	rename("temp co.csv", "orders List.csv");
+
+	cout << "### Order Canceled ###" << endl;
+}
+
+
+
+
