@@ -8,7 +8,7 @@ Orders::Orders()
 {
 	
 	//int temp_cust_id = 0;
-	//item_total_price;
+	
 }
 /////////////////////////////////////////////////   Place a oreder //////////////////////////////////////////////////////
 void Orders::place_order()
@@ -115,11 +115,12 @@ void Orders::place_order()
 				//{
 					cout << setw(5) << item_id << setw(20) << item_name << setw(10) << item_category << setw(12) << item_price_s <<
 						setw(10) << select_item_qty << setw(10) << item_total_price << setw(10) << customer_id << endl;
-
+					
+				
+					
 				//}
 			}
 			fin.close();
-			
 			cout << "___________________________________________________________________________________" << endl;//bottom line of selected items
 			break;
 
@@ -491,5 +492,4 @@ void Orders::update_order()
 	cout << "\n### Order Updated ###\n" << endl;
 
 }
-
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Items.h"
 #include "Orders.h"
+#include "Check_Out.h"
+#include "Customers.h"
 using namespace std;
 
 void admin();
@@ -92,14 +94,16 @@ void customer()
 	int customer_id_cancel_order;
 
 	Orders o;
+	Check_Out co;
 	//Customers* c;
 	//c = new place_order();
 	do
 	{
-		cout << "Enter your Choice" << endl;
+		cout << "\nEnter your Choice" << endl;
 		cout << "1. Place a order" << endl;
 		cout << "2. Update a order" << endl;
 		cout << "3. Cancel order" << endl;
+		cout << "4. Check out page" << endl;
 		//cout << "4. Show Order List" << endl;
 		//cout << "5. " << endl;
 		cout << "0. Exit" << endl;
@@ -123,7 +127,7 @@ void customer()
 			o.cancel_order( customer_id_cancel_order);
 			break;
 		case 4:
-			//o.update_order();
+			co.check_out();
 			break;
 		case 5:
 			//
